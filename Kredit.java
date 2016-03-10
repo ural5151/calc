@@ -63,4 +63,80 @@ public class Kredit {
             }
         });
         resultLabel = new JLabel("Введите данные для рассчёта");
+        
+        GridBagLayout layout = new GridBagLayout();
+        GridBagConstraints constraints = new GridBagConstraints();
+        constraints.weightx = 1.0;
+        constraints.weighty = 1.0;
+        constraints.insets = new Insets(5, 5, 5, 5);
+        
+            	constraints.gridx = 0;
+                constraints.anchor = GridBagConstraints.WEST;
+                constraints.ipadx = 90;
+                constraints.gridy = 0;
+                layout.setConstraints(pLabel, constraints);
+                constraints.gridy = 1;
+                layout.setConstraints(termLabel, constraints);
+                constraints.gridy = 2;
+                layout.setConstraints(priceLabel, constraints);
+                
+                constraints.gridx = 1;
+                constraints.anchor = GridBagConstraints.EAST;
+                constraints.ipadx = 50;
+                constraints.gridy = 0;
+                layout.setConstraints(pField, constraints);
+                constraints.gridy = 1;
+                layout.setConstraints(termField, constraints);
+                constraints.gridy = 2;
+                layout.setConstraints(priceField, constraints);
+                
+                constraints.gridx = 2;
+                constraints.ipadx = 0;
+                constraints.gridy = 0;
+                layout.setConstraints(kmLabel, constraints);
+                constraints.gridy = 1;
+                layout.setConstraints(litersLabel, constraints);
+                constraints.gridy = 2;
+                layout.setConstraints(rurLabel, constraints);
+      constraints.gridx = 0;
+        constraints.gridy = 4;
+        constraints.gridwidth = GridBagConstraints.REMAINDER;
+        constraints.anchor = GridBagConstraints.EAST;
+        layout.setConstraints(calcButton, constraints);
+        
+        constraints.gridy = 5;
+        constraints.fill = GridBagConstraints.HORIZONTAL;
+        constraints.anchor = GridBagConstraints.WEST;
+        layout.setConstraints(resultLabel, constraints);
+        
+        mainFrame = new JFrame("Кредитный калькулятор");
+        mainFrame.setSize(600, 450);
+        mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        mainFrame.setLayout(layout);
+        
+        mainFrame.add(pLabel);
+        mainFrame.add(termLabel);
+        mainFrame.add(priceLabel);
+        mainFrame.add(pField);
+        mainFrame.add(termField);
+        mainFrame.add(priceField);
+        mainFrame.add(kmLabel);
+        mainFrame.add(litersLabel);
+        mainFrame.add(rurLabel);
+        mainFrame.add(calcButton);
+        mainFrame.add(resultLabel);
+        mainFrame.pack();
+        mainFrame.setVisible(true);
+    }
+    
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new Kredit();
+            }
+        });
+    }
+ 
+}
 
