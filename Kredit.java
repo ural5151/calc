@@ -29,3 +29,4 @@ public class Kredit {
     private JButton calcButton;
     private JLabel resultLabel;
     private JFrame mainFrame;
+    
